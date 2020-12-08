@@ -10,4 +10,9 @@ class NoteList {
     getNotesList() {
         return this.notesArray;
     }
+
+    createNote(text) {
+        this.addNote(new Note(text));
+        return this.notesArray[this.notesArray.length - 1];
+    }
 }
