@@ -1,5 +1,5 @@
 let firstNote = {
-    getText: function() { return "Hello World!" }
+    getText: function() { return "Hello World! I'm Constantine!" }
 };
 let secondNote = {
     getText: function() { return "Hi! I'm AdamusBG" }
@@ -14,8 +14,8 @@ it('Returns an empty array of notes', function() {
 noteList.addNote(firstNote);
 noteList.addNote(secondNote);
 
-it('Returns an array containing "Hello World!"', function() {
-    expect(noteList.getNotesList()[0].getText()).toEqual("Hello World!");
+it('Returns an array containing "Hello World! I\'m Constantine!"', function() {
+    expect(noteList.getNotesList()[0].getText()).toEqual("Hello World! I'm Constantine!");
 });
 
 it('Returns an array containing "Hi! I\'m AdamusBG"', function() {
