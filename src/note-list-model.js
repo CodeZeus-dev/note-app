@@ -1,3 +1,5 @@
+'use strict';
+
 class NoteList {
     constructor() {
         this.notesArray = [];
