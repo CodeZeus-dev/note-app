@@ -27,4 +27,3 @@ it('Returns a string of HTML containing the notes list', function() {
         "<ul id=\"notes-list\"><li><div>Hello World! I'm Constantine!</div></li><li><div>Hi! I'm AdamusBG</div></li></ul>"
     );
 });
-
