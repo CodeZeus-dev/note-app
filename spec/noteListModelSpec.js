@@ -1,8 +1,10 @@
 let firstNote = {
-    getText: function() { return "Hello World! I'm Constantine!" }
+    getText: function() { return "Hello World! I'm Constantine!" },
+    getID: function() { return 0 }
 };
 let secondNote = {
-    getText: function() { return "Hi! I'm AdamusBG" }
+    getText: function() { return "Hi! I'm AdamusBG" },
+    getID: function() { return 1 }
 };
 
 let noteList = new NoteList();
@@ -26,3 +28,7 @@ it('creates and stores a new note', function() {
     newNote = noteList.createNote("Note created within the NoteList class");
     expect(noteList.notesArray).toContain(newNote);
 });
+
+it('creates and stores a new note with an id based on the note\'s position in the notesArray', function() {
+    expect(newNote.getID()).toEqual(2);
+})

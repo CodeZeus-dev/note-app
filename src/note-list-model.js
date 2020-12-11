@@ -14,7 +14,7 @@ class NoteList {
     }
 
     createNote(text) {
-        this.addNote(new Note(text));
+        this.addNote(new Note(text, this.notesArray.length));
         return this.notesArray[this.notesArray.length - 1];
     }
 }

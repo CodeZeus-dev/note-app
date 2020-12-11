@@ -13,5 +13,7 @@ class NoteController {
     }
 }
 
-let noteControl = new NoteController();
-noteControl.renderAppHtml();
+if (document.title === 'Note App - Vanilla JS') {
+    let noteControl = new NoteController();
+    noteControl.renderAppHtml();
+} // this conditional permits the execution of lines 17, 18 only if on index.html; this is done to prevent the statements from running if on SpecRunner

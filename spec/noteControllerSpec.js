@@ -6,8 +6,13 @@ let noteListViewerDouble = double('NoteListViewer', {convertListToHTML: '<ul id=
 let emptyNoteController = new NoteController();
 let noteController = new NoteController(noteListDouble, noteListViewerDouble);
 
-// noteListDouble.getNotesList().map((note) => console.log(note.getText()));
-// console.log(emptyNoteController.renderAppHtml())
+let documentDouble = {
+    getElementById: function() {
+        return {
+            innerHTML: '<ul id="notes-list"><li><div>Favourite drink: whisky</div></li></ul>'
+        };
+    }
+}
 
 it('creates a note list model instance upon initialisation', function() {
     expect(emptyNoteController.noteList).toBeInstanceOf(NoteList);
@@ -18,6 +23,6 @@ it('creates a note list viewer instance upon initialisation', function() {
 });
 
 it('returns the HTML content of the notes list', function() {
-    expect(document.getElementById('app').innerHTML).toEqual('<ul id="notes-list"><li><div>Favourite drink: whi</div></li></ul>');
+    expect(documentDouble.getElementById('app').innerHTML).toEqual(noteListViewerDouble.convertListToHTML());
 });
 
